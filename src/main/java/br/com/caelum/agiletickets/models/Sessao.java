@@ -21,7 +21,7 @@ public class Sessao {
 	@ManyToOne
 	private Espetaculo espetaculo;
 
-	@Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
+	@Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
 	private DateTime inicio;
 
 	private Integer duracaoEmMinutos;
@@ -59,11 +59,13 @@ public class Sessao {
 	}
 
 	public String getDia() {
-		return inicio.toString(DateTimeFormat.shortDate().withLocale(new Locale("pt", "BR")));
+		return inicio.toString(DateTimeFormat.shortDate().withLocale(
+				new Locale("pt", "BR")));
 	}
 
 	public String getHora() {
-		return inicio.toString(DateTimeFormat.shortTime().withLocale(new Locale("pt", "BR")));
+		return inicio.toString(DateTimeFormat.shortTime().withLocale(
+				new Locale("pt", "BR")));
 	}
 
 	public Integer getTotalIngressos() {
@@ -91,6 +93,6 @@ public class Sessao {
 	}
 
 	public boolean podeReservar(Integer numeroDeIngressos) {
-		return getIngressosDisponiveis() > numeroDeIngressos;
+		return getIngressosDisponiveis() >= numeroDeIngressos;
 	}
 }
