@@ -80,9 +80,9 @@ public class Espetaculo {
 		return estabelecimento;
 	}
 
-	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim,
+	public boolean criaSessoes(LocalDate inicio, LocalDate fim,
 			LocalTime horario, Periodicidade periodicidade) {
-		return null;
+		return true;
 	}
 
 	public List<Sessao> criaListaSessoes(LocalDate inicio, LocalDate fim,
